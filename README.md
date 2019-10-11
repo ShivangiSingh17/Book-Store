@@ -1,13 +1,13 @@
 # Book-Store Management System
 ### EXISTING SYSTEM:
-This system is an attempt to overcome the present inefficient and time consuming process of locating, reserving and purchasing quality reading materials available in the store. Currently, clients have to go through a time consuming process to perform aforementioned tasks which cause waste of labor and firms resources. Through our automated book store solution, we provide an easy way of searching, reserving and purchasing of books.
+This system is an https://github.com/ShivangiSingh17/Book-Store.gitattempt to overcome the present inefficient and time consuming process of locating, reserving and purchasing quality reading materials available in the store. Currently, clients have to go through a time consuming process to perform aforementioned tasks which cause waste of labor and firms resources. Through our automated book store solution, we provide an easy way of searching, reserving and purchasing of books.
 
 ### PROPOSED SYSTEM:
 The Bookstore Management System is to automate all operations in a bookshop. Generally it includes the Order Processing, Stock Management and Accounts Management. The main objective of this project is to manage the details and information of Inventory, books, sales, stock etc. The purpose of the project is to build an application to reduce the manual work for managing the inventory. It tracks all the details regarding receipts, sales and stocks.
 
 ### TECHNOLOGIES USED:
-1. Front-end: Java using Swing
-1. Back-end: MySQL
+#####Front-end: Java using Swing
+#####Back-end: MySQL
 
 
 ### FUNCTIONS PROVIDED:
