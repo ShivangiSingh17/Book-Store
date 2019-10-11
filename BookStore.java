@@ -5,7 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.*; 
 
 
-class MainWindow extends LoginPage {
+class MainWindow extends ALoginPage {
 	MainWindow() {
 		JFrame Mframe = new JFrame();
 		Mframe.setTitle("Welcome");
@@ -129,12 +129,18 @@ class ULoginPage extends JFrame {
 		Lframe.add(p4, BorderLayout.CENTER);
 		
 		BLogin.addActionListener(new ActionListener(){  
-        public void actionPerformed(ActionEvent e1){ 
-		  	RegistrationPage r = new RegistrationPage();
-		  	Lframe.setVisible(false);
+        	public void actionPerformed(ActionEvent e1){ 
+		  		RegistrationPage r = new RegistrationPage();
+		  		Lframe.setVisible(false);
 			}  
 		});
-			
+		
+		BSubmit.addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e1){ 
+				UserFunctions user = new UserFunctions();
+				Lframe.setVisible(false);
+			}  
+		});
 	}
 }
 
@@ -289,9 +295,43 @@ class AdminFunctions extends JFrame {
 		AFframe.add(p6, BorderLayout.CENTER);
 	}
 }
+
+class UserFunctions extends JFrame {
+	UserFunctions() {
+		JFrame UFframe = new JFrame();
+		UFframe.setTitle("Login Successful. Welcome");
+    	UFframe.setSize(300,200);
+    	UFframe.setLocationRelativeTo(null); 
+    	UFframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		UFframe.setVisible(true);
+		
+		JPanel p7 = new JPanel(new GridLayout(1,3,5,5));
+		JPanel p8 = new JPanel(new GridLayout(1,2,5,5));
+
+		JButton BSearch, BBuy, BDisplay, BLogout, BExit;
+		BSearch = new JButton("Search");
+		BBuy = new JButton("Buy");
+		BDisplay = new JButton("Display");
+		BLogout = new JButton("Logout");
+		BExit = new JButton("Exit");
+
+
+		p7.add(BSearch);
+		p7.add(BBuy);
+		p7.add(BDisplay);
+
+		p8.add(BLogout);
+		p8.add(BExit);
+
+		UFframe.add(new JLabel("Choose a Function"), BorderLayout.NORTH);
+		UFframe.add(p7, BorderLayout.CENTER);
+		UFframe.add(p8, BorderLayout.SOUTH);
+
+	}
+}
     
 
-public class project {
+public class BookStore {
 	public static void main(String[] args) {
 		MainWindow Mframe = new MainWindow();
 	}
