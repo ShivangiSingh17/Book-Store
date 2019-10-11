@@ -305,8 +305,8 @@ class UserFunctions extends JFrame {
     	UFframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		UFframe.setVisible(true);
 		
-		JPanel p7 = new JPanel(new GridLayout(1,3,5,5));
-		JPanel p8 = new JPanel(new GridLayout(1,2,5,5));
+		JPanel p7 = new JPanel(new GridLayout(1,3,10,10));
+		JPanel p8 = new JPanel(new GridLayout(1,2,10,10));
 
 		JButton BSearch, BBuy, BDisplay, BLogout, BExit;
 		BSearch = new JButton("Search");
@@ -315,7 +315,6 @@ class UserFunctions extends JFrame {
 		BLogout = new JButton("Logout");
 		BExit = new JButton("Exit");
 
-
 		p7.add(BSearch);
 		p7.add(BBuy);
 		p7.add(BDisplay);
@@ -323,10 +322,89 @@ class UserFunctions extends JFrame {
 		p8.add(BLogout);
 		p8.add(BExit);
 
+		BExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e3) {
+				System.exit(0);
+			}
+		});
+
+		BLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e3) {
+				ULoginPage u = new ULoginPage();
+				UFframe.setVisible(false);
+			}
+		});
+
+		BSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e3) {
+				UserSearchPage usp = new UserSearchPage();
+				UFframe.setVisible(false);
+			}
+		});
+
+		BDisplay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e3) {
+				UserDisplayPage usp = new UserDisplayPage();
+				UFframe.setVisible(false);
+			}
+		});
+
 		UFframe.add(new JLabel("Choose a Function"), BorderLayout.NORTH);
 		UFframe.add(p7, BorderLayout.CENTER);
 		UFframe.add(p8, BorderLayout.SOUTH);
+	}
+}
 
+class UserSearchPage extends JFrame {
+	UserSearchPage() {
+		JFrame USPframe = new JFrame();
+		USPframe.setTitle("Search");
+    	USPframe.setSize(300,200);
+    	USPframe.setLocationRelativeTo(null); 
+    	USPframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		USPframe.setVisible(true);
+
+		JPanel p9 = new JPanel(new GridLayout(1,1,10,10));
+		JPanel p10 = new JPanel(new GridLayout(1,2,10,10));
+		JTextField LSearch = new JTextField("Enter a Book Name");
+		JButton BUSearch, BUExit;
+		BUSearch = new JButton("Search");
+		BUExit = new JButton("Exit");
+
+		p9.add(LSearch);
+		p10.add(BUSearch);
+		p10.add(BUExit);
+
+		BUExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e3) {
+				System.exit(0);
+			}
+		});
+
+		USPframe.add(new JLabel("Enter a Book Name"),BorderLayout.NORTH);
+		USPframe.add(p9,BorderLayout.CENTER);
+		USPframe.add(p10,BorderLayout.SOUTH);
+	}
+}
+
+class UserDisplayPage extends JFrame {
+	UserDisplayPage() {
+		JFrame UDPframe = new JFrame();
+		UDPframe.setTitle("Search");
+    	UDPframe.setSize(400,100);
+    	UDPframe.setLocationRelativeTo(null); 
+    	UDPframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		UDPframe.setVisible(true);
+		
+		JPanel p11 = new JPanel(new GridLayout(1,2,10,10));
+		JComboBox genre = new JComboBox(new String[]{"Science Fiction", "Mystery","Fiction","Non-Fiction","Fantasy","Romance"});
+		JButton BUDisplay = new JButton("Display");
+		JLabel UDPgenre = new JLabel("Choose a Book Genre:");
+		p11.add(UDPgenre);
+		p11.add(genre);
+		
+		UDPframe.add(p11,BorderLayout.CENTER);
+		UDPframe.add(BUDisplay,BorderLayout.SOUTH);	
 	}
 }
     
