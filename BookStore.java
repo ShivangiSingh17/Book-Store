@@ -242,7 +242,7 @@ class RegistrationPage extends JFrame {
 class AdminFunctions extends JFrame {
 	AdminFunctions() {
 		JFrame AFframe = new JFrame();
-		AFframe.setTitle("Login Successfull. Welcome");
+		AFframe.setTitle("Login Successful. Welcome");
         AFframe.setLocationRelativeTo(null); 
     	AFframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         AFframe.setSize(500,500);  
